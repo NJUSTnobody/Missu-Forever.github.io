@@ -22,21 +22,27 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="分支什么是分支？分支可以理解为当前工作目录的一个副本。">
+  <meta name="description" content="git在以后科研中的代码管理和日后的工作中都有着举足轻重的作用，而作为一个大二小白，很多知识都有严重的漏洞和不足，所以在学习git的过程中比较吃力。但是作为程序员，学习哪一方面知识可能都是这样吧。最近在做个人博客和vscode等工具的学习，越发觉得git的重要性，于是在b站上看了斯特迷航的git快速上手教程，连接放在这里:10分钟git快速上手使用,下面就是我自己听课时的笔记。（比较懒，主要靠截屏">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git学习笔记1-分支">
+<meta property="og:title" content="git学习笔记">
 <meta property="og:url" content="http://example.com/2025/01/18/git%E5%88%86%E6%94%AF/index.html">
 <meta property="og:site_name" content="Missu-Forever">
-<meta property="og:description" content="分支什么是分支？分支可以理解为当前工作目录的一个副本。">
+<meta property="og:description" content="git在以后科研中的代码管理和日后的工作中都有着举足轻重的作用，而作为一个大二小白，很多知识都有严重的漏洞和不足，所以在学习git的过程中比较吃力。但是作为程序员，学习哪一方面知识可能都是这样吧。最近在做个人博客和vscode等工具的学习，越发觉得git的重要性，于是在b站上看了斯特迷航的git快速上手教程，连接放在这里:10分钟git快速上手使用,下面就是我自己听课时的笔记。（比较懒，主要靠截屏">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501191020333.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501191642211.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501191652636.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501172305702.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501172306288.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501181011443.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501192007166.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501192014664.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501192044104.png">
 <meta property="article:published_time" content="2025-01-18T02:12:35.098Z">
-<meta property="article:modified_time" content="2025-01-18T14:22:13.002Z">
+<meta property="article:modified_time" content="2025-01-19T14:20:01.195Z">
 <meta property="article:author" content="Zheng Li">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501172305702.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501191020333.png">
 
 <link rel="canonical" href="http://example.com/2025/01/18/git%E5%88%86%E6%94%AF/">
 
@@ -51,7 +57,7 @@
   };
 </script>
 
-  <title>git学习笔记1-分支 | Missu-Forever</title>
+  <title>git学习笔记 | Missu-Forever</title>
   
 
 
@@ -185,7 +191,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          git学习笔记1-分支
+          git学习笔记
         </h1>
 
         <div class="post-meta">
@@ -194,17 +200,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-01-18 10:12:35 / 修改时间：22:22:13" itemprop="dateCreated datePublished" datetime="2025-01-18T10:12:35+08:00">2025-01-18</time>
+              <time title="创建时间：2025-01-18 10:12:35" itemprop="dateCreated datePublished" datetime="2025-01-18T10:12:35+08:00">2025-01-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-19 22:20:01" itemprop="dateModified" datetime="2025-01-19T22:20:01+08:00">2025-01-19</time>
+              </span>
 
           
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>47</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -222,12 +234,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><h2 id="什么是分支？"><a href="#什么是分支？" class="headerlink" title="什么是分支？"></a>什么是分支？</h2><p>分支可以理解为当前工作目录的一个副本。</p>
+        <p>git在以后科研中的代码管理和日后的工作中都有着举足轻重的作用，而作为一个大二小白，很多知识都有严重的漏洞和不足，所以在学习git的过程中比较吃力。但是作为程序员，学习哪一方面知识可能都是这样吧。最近在做个人博客和vscode等工具的学习，越发觉得git的重要性，于是在b站上看了斯特迷航的git快速上手教程，连接放在这里:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1PG411L7of?vd_source=fde427a0f6fdebe8bcb604a8218108c3">10分钟git快速上手使用</a>,下面就是我自己听课时的笔记。（比较懒，主要靠截屏哈哈）</p>
 <span id="more"></span>
-<h2 id="为什么要使用分支？"><a href="#为什么要使用分支？" class="headerlink" title="为什么要使用分支？"></a>为什么要使用分支？</h2><p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501172305702.png" alt="为什么要使用分支"></p>
-<h2 id="版本库建设中的分支管理"><a href="#版本库建设中的分支管理" class="headerlink" title="版本库建设中的分支管理"></a>版本库建设中的分支管理</h2><p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501172306288.png" alt="image-20250117230655601"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501181011443.png" alt="image-20250118101115250"></p>
 
+<h1 id="1-gitignore一忽略文件的版本跟踪"><a href="#1-gitignore一忽略文件的版本跟踪" class="headerlink" title="1 gitignore一忽略文件的版本跟踪"></a>1 gitignore一忽略文件的版本跟踪</h1><p>在项目中，并不是所有文件都要保存到版本库中，如日志文件、临时文件及工具生成的文件等</p>
+<p><strong>模式匹配</strong>：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501191020333.png" alt="image-20250119101959432"></p>
+<h1 id="2-从版本库中恢复文件"><a href="#2-从版本库中恢复文件" class="headerlink" title="2. 从版本库中恢复文件"></a>2. 从版本库中恢复文件</h1><p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501191642211.png" alt="image-20250119164228197"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501191652636.png" alt="image-20250119165259039"></p>
+<h1 id="3-分支"><a href="#3-分支" class="headerlink" title="3 分支"></a>3 分支</h1><p>分支可以理解为当前工作目录的一个副本。</p>
+<h2 id="3-1-为什么要使用分支？"><a href="#3-1-为什么要使用分支？" class="headerlink" title="3.1 为什么要使用分支？"></a>3.1 为什么要使用分支？</h2><p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501172305702.png" alt="为什么要使用分支"></p>
+<h2 id="3-2-版本库建设中的分支管理"><a href="#3-2-版本库建设中的分支管理" class="headerlink" title="3.2 版本库建设中的分支管理"></a>3.2 版本库建设中的分支管理</h2><p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501172306288.png" alt="image-20250117230655601"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501181011443.png" alt="image-20250118101115250"></p>
+<h1 id="4-提交冲突与解决方法"><a href="#4-提交冲突与解决方法" class="headerlink" title="4 提交冲突与解决方法"></a>4 提交冲突与解决方法</h1><h2 id="4-1-能自动合并的冲突："><a href="#4-1-能自动合并的冲突：" class="headerlink" title="4.1 能自动合并的冲突："></a>4.1 能自动合并的冲突：</h2><p>先git pull 再git push</p>
+<h2 id="4-2-手动解决冲突："><a href="#4-2-手动解决冲突：" class="headerlink" title="4.2 手动解决冲突："></a>4.2 手动解决冲突：</h2><p>先git pull：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501192007166.png" alt="image-20250119200759093"></p>
+<p>需要团队沟通解决，做出取舍，删掉提示，保存提交</p>
+<h1 id="5-提交修正"><a href="#5-提交修正" class="headerlink" title="5 提交修正"></a>5 提交修正</h1><h2 id="5-1-应用场景："><a href="#5-1-应用场景：" class="headerlink" title="5.1 应用场景："></a>5.1 应用场景：</h2><p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501192014664.png" alt="image-20250119201400146"></p>
+<p>顾名思义，提交修正就是“修正”上一次的提交。</p>
+<h2 id="5-2-提交修正效果："><a href="#5-2-提交修正效果：" class="headerlink" title="5.2 提交修正效果："></a>5.2 提交修正效果：</h2><p>在log中，提交修正的信息<strong>覆盖</strong>之前提交的信息</p>
+<h2 id="5-3-提交修正命令："><a href="#5-3-提交修正命令：" class="headerlink" title="5.3 提交修正命令："></a>5.3 提交修正命令：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit ammend</span><br></pre></td></tr></table></figure>
+
+<p>正常的操作：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/NJUSTnobody/image_bed@master/blog_images202501192044104.png" alt="image-20250119204421013"></p>
+<p>这样做很不利于日后的文件查看，而我们想做的是修正上一次的提交，而不是纯粹地新增一次提交	</p>
+<h2 id="5-4-内容："><a href="#5-4-内容：" class="headerlink" title="5.4 内容："></a>5.4 内容：</h2><p><strong>对提交错误文件的修正</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend -m &#x27;第一次修改 1.txt&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><strong>提交时遗漏文件</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend -m &#x27;第二次修改 2.txt&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><strong>提交错误信息的修正</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend -m &#x27;第二次修改(都增加2) 2.txt&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><strong>长开发周期中的小提交</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend -m &#x27;增加功能1-1&#x27;</span><br><span class="line">git commit --amend -m &#x27;增加功能1-2&#x27;</span><br><span class="line">······</span><br><span class="line">git commit --amend -m &#x27;增加功能1-4&#x27;</span><br><span class="line">git commit --amend -m &#x27;增加功能1&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>在上面一次次修正过程中，功能1分为小功能1-1~1-5，每一次提交修正都会在log覆盖之前的日志信息，最终只剩下“增加功能1”</p>
+<p>这些操作无非时让日志看起来更简洁，对我这样的强迫症患者来说简直就是福音。</p>
+<p>插播一嘴，如果log比较长，那在查看时候会有冒号，通过上下方向键可以进一步查看，如果退出按q键就可以了。</p>
+<h1 id="6-git日志的高级用法"><a href="#6-git日志的高级用法" class="headerlink" title="6 git日志的高级用法"></a>6 git日志的高级用法</h1>
     </div>
 
     
@@ -307,7 +353,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%94%AF"><span class="nav-number">1.</span> <span class="nav-text">分支</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E6%94%AF%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">什么是分支？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%88%86%E6%94%AF%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">为什么要使用分支？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%BA%93%E5%BB%BA%E8%AE%BE%E4%B8%AD%E7%9A%84%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">版本库建设中的分支管理</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-gitignore%E4%B8%80%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E7%9A%84%E7%89%88%E6%9C%AC%E8%B7%9F%E8%B8%AA"><span class="nav-number">1.</span> <span class="nav-text">1 gitignore一忽略文件的版本跟踪</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E4%BB%8E%E7%89%88%E6%9C%AC%E5%BA%93%E4%B8%AD%E6%81%A2%E5%A4%8D%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">2. 从版本库中恢复文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%88%86%E6%94%AF"><span class="nav-number">3.</span> <span class="nav-text">3 分支</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%88%86%E6%94%AF%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 为什么要使用分支？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E7%89%88%E6%9C%AC%E5%BA%93%E5%BB%BA%E8%AE%BE%E4%B8%AD%E7%9A%84%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 版本库建设中的分支管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E6%8F%90%E4%BA%A4%E5%86%B2%E7%AA%81%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">4 提交冲突与解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E8%83%BD%E8%87%AA%E5%8A%A8%E5%90%88%E5%B9%B6%E7%9A%84%E5%86%B2%E7%AA%81%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 能自动合并的冲突：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E6%89%8B%E5%8A%A8%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81%EF%BC%9A"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 手动解决冲突：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E6%8F%90%E4%BA%A4%E4%BF%AE%E6%AD%A3"><span class="nav-number">5.</span> <span class="nav-text">5 提交修正</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9A"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 应用场景：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E6%8F%90%E4%BA%A4%E4%BF%AE%E6%AD%A3%E6%95%88%E6%9E%9C%EF%BC%9A"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 提交修正效果：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E6%8F%90%E4%BA%A4%E4%BF%AE%E6%AD%A3%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 提交修正命令：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 内容：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-git%E6%97%A5%E5%BF%97%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">6 git日志的高级用法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -323,7 +369,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -380,12 +426,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">2k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">2 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
